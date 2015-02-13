@@ -1,15 +1,15 @@
 /**
  * Created by Jitendra on 2/13/15.
  */
-var socket= io.connect('/');
+var io= io.connect('/');
 // (1): Send a ping event with
 // some data to the server
 console.log( "socket: browser says ping (1)" );
-socket.emit('ping', "hello i am browser" );
+io.emit('ping', "hello i am browser" );
 
 // (4): When the browser receives a pong event
 // console log a message and the events data
-socket.on('pong', function (data) {
+io.on('pong', function (data) {
     console.log( 'socket: browser receives pong (4)', data );
 });
 
@@ -25,7 +25,7 @@ var prevX = 0,
     currY = 0;
 var flag=false,dot_flag=false;
 var x="black";
-
+var linewidth=2;
 
 // for selecting color
 $('.clr').on('click',function(evt){
@@ -80,18 +80,41 @@ function findxy(res,e){
             prevY = currY;
             currX = e.clientX - el.offsetLeft;
             currY = e.clientY - el.offsetTop;
-            draw();
+            draw(prevX,prevY,currX,currY,x,linewidth);
+            emitLine(prevX,prevY,currX,currY,x,linewidth)
         }
     }
 }
 
 //draw a line
-function draw() {
+function draw(prevX,prevY,currX,currY,x,linewidth) {
     ctx.beginPath();
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
     ctx.strokeStyle = x;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = linewidth;
     ctx.stroke();
     ctx.closePath();
 }
+var id = Math.round($.now()*Math.random());
+//emit to server
+function emitLine(prevX,prevY,currX,currY,x,linewidth){
+    //var sessionId = io.socket.sessionid;
+
+    var data = {
+        prevX: prevX,
+        prevY: prevY,
+        currX: currX,
+        currY:currY,
+        color: x,
+        lwidth:linewidth
+    };
+    io.emit('draw',data,id);
+    //console.log(data.prevX,data.prevY,data.currX,data.currY,data.color,data.lwidth);
+
+}
+
+io.on( 'draw', function( data ) {
+    //console.log( 'drawCircle event recieved:', data );
+    draw(data.prevX,data.prevY,data.currX,data.currY,data.color,data.lwidth);
+})

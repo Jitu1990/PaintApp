@@ -39,5 +39,12 @@ io.sockets.on('connection', function(socket){
 
     });
 
+
+    socket.on( 'draw', function( data, session ) {
+        //console.log( "session " + session + " drew:");
+        //console.log( data );
+        socket.broadcast.emit( 'draw', data );
+    })
+
 });
 console.log("server is running at 3000");
