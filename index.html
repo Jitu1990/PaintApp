@@ -5,45 +5,56 @@
     <title>Realtime Drawings</title>
     <link rel="stylesheet"  type="text/css" href="../css/mystyle.css"/>
 </head>
-<body>
+<body onload="">
     <div id ="container" class="">
         <div id="header">Now Drawing Online</div>
         <div id ="list">
-            <div id="" class="clr" style="background-color: blue;"></div>
-            <div id="" class="clr" style="background-color: aliceblue;"></div>
-            <div id="" class="clr" style="background-color: aqua;"></div>
-            <div id="" class="clr" style="background-color: aquamarine;"></div>
-            <div id="" class="clr" style="background-color: beige;"></div>
-            <div id="" class="clr" style="background-color: bisque;"></div>
-            <div id="" class="clr" style="background-color: black;"></div>
-            <div id="" class="clr" style="background-color: blueviolet;"></div>
-            <div id="" class="clr" style="background-color: brown;"></div>
-            <div id="" class="clr" style="background-color: cadetblue;"></div>
-            <div id="" class="clr" style="background-color: chartreuse;"></div>
-            <div id="" class="clr" style="background-color: crimson;"></div>
-            <div id="" class="clr" style="background-color: darkcyan;"></div>
-            <div id="" class="clr" style="background-color: darkgoldenrod;"></div>
-            <div id="" class="clr" style="background-color: darkgray;"></div>
-            <div id="" class="clr" style="background-color: darkgreen;"></div>
-            <div id="" class="clr" style="background-color: darkmagenta;"></div>
-            <div id="" class="clr" style="background-color: darkorange;"></div>
-            <div id="" class="clr" style="background-color: darkorchid;"></div>
-            <div id="" class="clr" style="background-color: darkred;"></div>
-            <div id="" class="clr" style="background-color: darkslategrey;"></div>
-            <div id="" class="clr" style="background-color: floralwhite;"></div>
-            <div id="" class="clr" style="background-color: gold"></div>
-            <div id="" class="clr" style="background-color: hotpink"></div>
+            <div id="c1" class="clr" style="background-color: blue;"></div>
+            <div id="c2" class="clr" style="background-color: aliceblue;"></div>
+            <div id="c3" class="clr" style="background-color: aqua;"></div>
+            <div id="c4" class="clr" style="background-color: aquamarine;"></div>
+            <div id="c5" class="clr" style="background-color: beige;"></div>
+            <div id="c6" class="clr" style="background-color: bisque;"></div>
+            <div id="c7" class="clr" style="background-color: black;"></div>
+            <div id="c8" class="clr" style="background-color: blueviolet;"></div>
+            <div id="c9" class="clr" style="background-color: brown;"></div>
+            <div id="c10" class="clr" style="background-color: cadetblue;"></div>
+            <div id="c11" class="clr" style="background-color: chartreuse;"></div>
+            <div id="c12" class="clr" style="background-color: crimson;"></div>
+            <div id="c13" class="clr" style="background-color: darkcyan;"></div>
+            <div id="c14" class="clr" style="background-color: darkgoldenrod;"></div>
+            <div id="c15" class="clr" style="background-color: darkgray;"></div>
+            <div id="c16" class="clr" style="background-color: darkgreen;"></div>
+            <div id="c17" class="clr" style="background-color: darkmagenta;"></div>
+            <div id="c18" class="clr" style="background-color: darkorange;"></div>
+            <div id="c19" class="clr" style="background-color: darkorchid;"></div>
+            <div id="c20" class="clr" style="background-color: darkred;"></div>
+            <div id="c21" class="clr" style="background-color: darkslategrey;"></div>
+            <div id="c22" class="clr" style="background-color: floralwhite;"></div>
+            <div id="c23" class="clr" style="background-color: gold"></div>
+            <div id="c24" class="clr" style="background-color: hotpink"></div>
 
         </div>
-        <canvas id="paper" width="" height=""></canvas>
-        <div id="footer">Header Labs India Ltd.</div>
+        <canvas id="paper" width="1166" height="550"></canvas>
+       <!--div id="footer">Header Labs India Ltd.</div-->
     </div>
 
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="../js/script.js"></script>
 <script>
-    var socket = io();
+  // var socket;
+   //socket = io();
+   //var c = document.getElementById("paper");
+   //var ctx = c.getContext("2d");
+  // ctx.moveTo(0,0);
+   //ctx.lineTo(200,100);
+   //ctx.stroke();
+
+    $(document).ready(function() {
+        $('#container').append('<div id="footer">Header Labs India Ltd.</div>');
+    });
 </script>
 </html>

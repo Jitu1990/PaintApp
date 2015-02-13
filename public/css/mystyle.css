@@ -26,9 +26,10 @@ body{
     float:left;
 }
 #paper{
-    width: 1166px;
-    height:550px;
+    /*width: 1166px;
+    height:550px;*/
     border:1px solid;
+    position: absolute;
     background:url('../img/bg.png') repeat #e4e4e4;
 
     /* This will hide the extra canvas if the screen is small */
@@ -50,5 +51,5 @@ body{
     width:1260px;
     font-family: "Helvetica", Times, serif;
     font-size: 30px;
-    border: 0px solid;
+    border: 1px solid;
 }

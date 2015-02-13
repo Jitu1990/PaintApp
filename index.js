@@ -22,5 +22,22 @@ io.sockets.on('connection', function(socket){
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
+
+
+
+    // (2): The server recieves a ping event
+    // from the browser on this socket
+    socket.on('ping', function ( data ) {
+
+        console.log('socket: server recieves ping (2)');
+
+        // (3): Return a pong event to the browser
+        // echoing back the data from the ping event
+        socket.emit( 'pong', data );
+
+        console.log('socket: server sends pong (3)');
+
+    });
+
 });
 console.log("server is running at 3000");
