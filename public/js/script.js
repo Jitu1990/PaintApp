@@ -26,6 +26,7 @@ var prevX = 0,
 var flag=false,dot_flag=false;
 var x="black";
 var linewidth=2;
+instructions = $('#instructions');
 
 // for selecting color
 $('.clr').on('click',function(evt){
@@ -58,6 +59,7 @@ el.onmouseout = function() {
 // find real coordinates
 function findxy(res,e){
     if (res == 'down') {
+        instructions.fadeOut();
         prevX = currX;
         prevY = currY;
         currX = e.clientX - el.offsetLeft;
@@ -99,7 +101,6 @@ function draw(prevX,prevY,currX,currY,x,linewidth) {
 var id = Math.round($.now()*Math.random());
 //emit to server
 function emitLine(prevX,prevY,currX,currY,x,linewidth){
-    //var sessionId = io.socket.sessionid;
 
     var data = {
         prevX: prevX,
@@ -115,6 +116,7 @@ function emitLine(prevX,prevY,currX,currY,x,linewidth){
 }
 
 io.on( 'draw', function( data ) {
+    instructions.fadeOut();
     //console.log( 'drawCircle event recieved:', data );
     draw(data.prevX,data.prevY,data.currX,data.currY,data.color,data.lwidth);
 })

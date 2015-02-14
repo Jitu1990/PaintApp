@@ -1,4 +1,6 @@
-
+/*{
+    box-sizing: border-box;/*
+}*/
 body{
 
 
@@ -6,30 +8,34 @@ body{
     color:#444;
 }
 #container{
-    height:650px;
+    /*height:640px;*/
     width:1260px;
     border: 1px solid;
 }
 
 #header{
-    border: 1px solid;
+
+    border: 0 solid;
     height:auto;
+    background-color: #111111;
+    color: #eeeeee;
     width:1260px;
     font-family: "Helvetica", Times, serif;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: normal;
 }
 
 #list{
     border:1px solid;
     width:90px;
-    height:550px;
+    height:554px;
     float:left;
 }
 #paper{
     /*width: 1166px;
     height:550px;*/
     border:1px solid;
-    position: absolute;
+
     background:url('../img/bg.png') repeat #e4e4e4;
 
     /* This will hide the extra canvas if the screen is small */
@@ -46,10 +52,47 @@ body{
     display: inline-block;
 }
 #footer{
+   /* background-color: #111111;*/
+    margin: auto;
     text-align: center;
     height:auto;
     width:1260px;
     font-family: "Helvetica", Times, serif;
-    font-size: 30px;
-    border: 1px solid;
+    font-size: 20px;
+    border: 0px solid;
+    word-spacing: 5px;
+    padding: 10px;
+    bottom: 0;
+    z-index: 100000;
+}
+hgroup{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 400px;
+    height: 88px;
+    top: 50%;
+    left: 50%;
+    margin: -120px 0 0 -225px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(100, 100, 100, 0.1), 0 3px 1px #D4D4D4;
+    color: #555;
+}
+h1{
+    font-size: 22px;
+    padding-bottom: 0px;
+}
+
+h2{
+    font-size: 13px;
+    font-weight: normal;
+    padding-bottom: 2px;
+}
+
+h3{
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    color: #999;
 }

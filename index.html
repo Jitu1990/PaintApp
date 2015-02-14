@@ -7,7 +7,7 @@
 </head>
 <body onload="">
     <div id ="container" class="">
-        <div id="header">Now Drawing Online</div>
+        <div id="header"> Draw With Friends</div>
         <div id ="list">
             <div id="c1" class="clr" style="background-color: blue;"></div>
             <div id="c2" class="clr" style="background-color: aliceblue;"></div>
@@ -35,26 +35,31 @@
             <div id="c24" class="clr" style="background-color: hotpink"></div>
 
         </div>
-        <canvas id="paper" width="1166" height="550"></canvas>
-       <!--div id="footer">Header Labs India Ltd.</div-->
+        <canvas id="paper" width="1166" height="552"></canvas>
+        <hgroup id="instructions">
+            <h1>Draw on Canvas!</h1>
+            <h2>You will see everyone else who's doing the same.</h2>
+            <h3>Tip: if the stage gets dirty, simply reload the page</h3>
+        </hgroup>
+       <div id="footer">Header Labs India Ltd.</div>
     </div>
 
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="../js/jquery.hotkeys.js"></script>
 <script src="../js/script.js"></script>
-<script>
-  // var socket;
-   //socket = io();
-   //var c = document.getElementById("paper");
-   //var ctx = c.getContext("2d");
-  // ctx.moveTo(0,0);
-   //ctx.lineTo(200,100);
-   //ctx.stroke();
+<!--script>
+
+
 
     $(document).ready(function() {
-        $('#container').append('<div id="footer">Header Labs India Ltd.</div>');
+        //$('#container').append('<div id="footer">Header Labs India Ltd.</div>');
+
+        $('#paper').bind('keydown', 'command + z', function(e){
+            cUndo();
+        });
     });
-</script>
+</script-->
 </html>
